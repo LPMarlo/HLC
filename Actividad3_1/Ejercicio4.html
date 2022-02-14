@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio4</title>
+</head>
+<script>
+    let numeroAdivinar = parseInt((Math.random() * 100) + 1);
+    let intentos = 0;
+    function comprobar() {
+        if (intentos < 5) {
+            let numero = parseInt(document.getElementById("numero").value);
+            if (numero == numeroAdivinar) {
+                document.getElementById("msg").innerText = "Has acertado";
+            } else if (numero > numeroAdivinar) {
+                document.getElementById("msg").innerText = "El número es menor";
+            } else {
+                document.getElementById("msg").innerText = ("El número es mayor");
+            }
+            intentos++;
+        } else {
+            document.getElementById("msg").innerText = ("Has agotado los intentos");
+        }
+        intentos++;
+    }
+</script>
+<body>
+    <h1>Adivina el numero</h1>
+    <input type="number" id="numero" name="numero" min="1" max="100">
+    <button onclick="comprobar()">Comprobar</button>
+    <p id="msg"></p>
+</body>
+</html>

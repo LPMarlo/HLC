@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio3</title>
+    <script>
+        function aleatorio() {
+            document.getElementById("numero").innerHTML = Math.floor(Math.random() * 100) + 1;
+        }
+    </script>
+</head>
+<body>
+    <h3>Número Aleatorio</h3>
+    <button onclick="aleatorio()">Generar</button>
+    <p id="numero"></p>
+</body>
+</html>

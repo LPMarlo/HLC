@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 3.3 Extra</title>
+    <script>
+        // Declaración de variable resultado, inicializada a 0
+        let resultado = 0;
+
+        // Declaración de lista de números, inicializada vacía
+        let numeros = [];
+
+        // Bucle infinito
+        while (true) {
+
+            // Pedimos un número al usuario
+            let numero = prompt("Introduce un número: ");
+
+            // Si el lo introducido no es un número, salimos del bucle
+            if (isNaN(numero)) break;
+
+
+            // Acumulamos el número en la variable resultado
+            // se utiliza parseInt para que no concatene los números como cadena
+            resultado += parseInt(numero);
+
+            // Guardamos el número en la lista de números
+            numeros.push(numero)
+        }
+
+        // Mostramos la lista de números y el resultado si el usuario ha introducido algún número
+        if (numeros.length > 0) alert("Lista de números: " + numeros.join(", ") + "\n" + "Resultado: " + resultado);
+
+        // Si no ha introducido ningún número, mostramos un mensaje de error
+        else alert("No has introducido ningún número");
+    </script>
+</head>
+<body>
+</body>
+</html>

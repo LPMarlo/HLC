@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 3.2</title>
+    <script>
+        let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+        let num = prompt("Introduce el número de DNI:");
+
+        if (num < 0 || num > 999999999) alert("El número de DNI no es válido");
+        else {
+            let resto = num % 23;
+            let letraCorrecta = letras[resto];
+
+            let letra = prompt("Introduce la letra del DNI:").toUpperCase();
+
+            if (letraCorrecta === letra) alert("El número y la letra de DNI son correctos");
+            else alert("La letra de DNI no es correcta");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

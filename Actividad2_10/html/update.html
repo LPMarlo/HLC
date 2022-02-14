@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div>
+        <form action="../php/update.php" method="post">
+            <!-- id -->
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id">
+
+            <!--- Nombre -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+
+            <!--- Apellidos -->
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" name="apellidos" id="apellidos">
+            <br>
+
+            <!-- Estudios -->
+            <label for="estudios">Estudios:</label>
+            <input type="text" name="estudios" id="estudios">
+            <br>
+
+            <!-- Nota -->
+            <label for="nota">Nota:</label>
+            <input type="number" name="nota" id="nota" min="0" max="10">
+            <br>
+
+            <!-- Submit -->
+            <input name="enviar" type="submit" value="Actualizar">
+
+            <!-- Back -->
+            <input name="back" type="button" value="Volver" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>
