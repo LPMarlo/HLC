@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | PassThePassword</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="wrapp">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="PassThePassword"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="passwords.php">Passwords</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="main">
+    <div class="wrapp">
+        <div class="title">
+            <h1>GENERATE PASSWORDS</h1>
+        </div>
+        <div class="generatedPasswordCard">
+            <div class="options">
+                <div class="option">
+                    <label for="length">Longitud de la contraseña: </label>
+                    <input type="number" name="length" id="length" min="8" max="16" value="8">
+                </div>
+                <div class="option">
+                    <label for="uppercase">Uppercase</label>
+                    <input type="checkbox" name="uppercase" id="uppercase" checked>
+                </div>
+                <div class="option">
+                    <label for="lowercase">Lowercase</label>
+                    <input type="checkbox" name="lowercase" id="lowercase" checked>
+                </div>
+                <div class="option">
+                    <label for="numbers">Numbers</label>
+                    <input type="checkbox" name="numbers" id="numbers" checked>
+                </div>
+                <div class="option">
+                    <label for="special">Special caracters</label>
+                    <input type="checkbox" name="special" id="special" checked>
+                </div>
+                <div class="generate">
+                    <input type="submit" value="Generate" onclick="generatePassword()">
+                </div>
+                <div class="generatedPassword">
+                    <p>Your password is:</p>
+                    <p id="password"></p>
+                    <button id="copyButton" onclick="copyPassword()">Copy</button>
+                </div>
+            </div>
+        </div>
+        <aside>
+            <div class="widget">
+                <h3>Related Articles</h3>
+                <ul>
+                    <li><a href="https://www.redeszone.net/noticias/seguridad/usuarios-no-utilizan-gestor-contrasenas/" target="_blank">Why not to use password managers?</a></li>
+                    <li><a href="https://www.lasexta.com/tecnologia-tecnoxplora/internet/tienes-muchas-contrasenas-consejos-gestionarlas-acordarte-cada_20220217620e1f2ff65b1900019bd095.html" target="_blank">Password management tips</a></li>
+                    <li><a href="https://www.genbeta.com/seguridad/esta-tabla-muestra-cuantos-segundos-siglos-tardaria-hacker-averiguar-tus-contrasenas" target="_blank">How long would it take a hacker to find out your passwords?</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</section>
+<footer>
+    <div class="wrapp">
+        <p>© 2022 PassThePassword, Inc. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    function generatePassword() {
+        let length = document.getElementById('length').value;
+        let uppercase = document.getElementById('uppercase').checked;
+        let lowercase = document.getElementById('lowercase').checked;
+        let numbers = document.getElementById('numbers').checked;
+        let special = document.getElementById('special').checked;
+
+        let password = "";
+        let possible = "";
+
+        if (uppercase) {
+            possible += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+        if (lowercase) {
+            possible += "abcdefghijklmnopqrstuvwxyz";
+        }
+        if (numbers) {
+            possible += "0123456789";
+        }
+        if (special) {
+            possible += "!@#$%^&*()_+";
+        }
+
+        for (let i = 0; i < length; i++) {
+            password += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+
+        document.getElementById('password').innerHTML = password;
+    }
+    function copyPassword() {
+        let password = document.getElementById('password').innerHTML;
+        let textArea = document.createElement('textarea');
+        textArea.value = password;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre">
+    <br>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="telefono" id="telefono">
+    <br>
+    <input type="submit" value="Enviar" onclick="validar()">
+
+    <script>
+        function validar() {
+            var nombre = document.getElementById("nombre").value;
+            var telefono = document.getElementById("telefono").value;
+            var nombreArray = nombre.split(" ");
+            if (nombreArray.length !== 2) {
+                alert("El nombre debe tener dos palabras");
+                return false;
+            }
+            if (telefono.length !== 9) {
+                alert("El teléfono debe tener 9 cifras");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

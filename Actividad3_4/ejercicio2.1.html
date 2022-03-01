@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function validar() {
+            var numero = document.getElementById("numero").value;
+            if (numero <= 0) {
+                alert("El numero tiene que ser mayor que 0");
+            } else if (isNaN(numero)) {
+                alert("No es un numero");
+            } else if (numero > 0 && !isNaN(numero)) {
+                alert("El numero es correcto");
+            }
+        }
+    </script>
+</head>
+<body>
+<label for="numero">Número: </label>
+<input type="text" id="numero" placeholder="Introduce un número">
+<button onclick="validar()">Enviar</button>
+</body>
+</html>

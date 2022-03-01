@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio2</title>
+
+</head>
+<body>
+    <input type="text" name="nombre" id="nombre">
+    <script>
+        var nombre = document.getElementById("nombre");
+        nombre.addEventListener("keypress", function(event){
+            if(event.charCode < 97 || event.charCode > 122){
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
